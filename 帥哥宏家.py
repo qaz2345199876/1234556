@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Dec  9 08:13:25 2020
+Created on Mon Dec 14 09:23:24 2020
 
-@author: USER
+@author: cis-user
 """
 
 from selenium import webdriver
@@ -23,7 +23,7 @@ driver.get(url)
 now = datetime.datetime.now() #now=現在的時間
 oneday = datetime.timedelta(days=5)#設定為5天
 
-now= now-oneday #今天之前的5天
+# now= now-oneday #今天之前的5天
 
 page=0
 with open('抓五天新聞.csv','w+',newline='', encoding="utf-8-sig") as csvfile:   #解決多一空行 newline=''
@@ -50,7 +50,7 @@ with open('抓五天新聞.csv','w+',newline='', encoding="utf-8-sig") as csvfil
             writer.writerow([search_h3[i].text])
             
         one1= datetime.timedelta(days=1)
-        now=now+one1
+        now=now-one1
         ndate=now.strftime('%Y%m%d')#抓出now的年月日
         a=ndate[-2:]
         
